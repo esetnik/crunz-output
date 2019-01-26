@@ -1,0 +1,1 @@
+* * * * * . /set_env.sh; cd /usr/src/app/src && vendor/bin/crunz schedule:run -vvv > /proc/1/fd/1 2>/proc/1/fd/2
