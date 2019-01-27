@@ -1,5 +1,11 @@
 {
   "require": {
-    "lavary/crunz": "1.11.0"
-  }
+    "lavary/crunz": "dev-fix-closure-run"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/PabloKowalczyk/crunz"
+    }
+  ]
 }

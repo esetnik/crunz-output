@@ -176,18 +176,12 @@
     },
     {
         "name": "lavary/crunz",
-        "version": "v1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "dev-fix-closure-run",
+        "version_normalized": "dev-fix-closure-run",
         "source": {
             "type": "git",
-            "url": "https://github.com/lavary/crunz.git",
-            "reference": "98935ac383c921a8d27ec295cf1d2a3f3140054a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/lavary/crunz/zipball/98935ac383c921a8d27ec295cf1d2a3f3140054a",
-            "reference": "98935ac383c921a8d27ec295cf1d2a3f3140054a",
-            "shasum": ""
+            "url": "https://github.com/PabloKowalczyk/crunz",
+            "reference": "67c3ce30d4dbcffec3bb8d6f21f07bf08edbad83"
         },
         "require": {
             "jeremeamia/superclosure": "^2.2",
@@ -210,7 +204,7 @@
             "ext-mbstring": "*",
             "symfony/var-dumper": "^3.4"
         },
-        "time": "2019-01-24T18:16:38+00:00",
+        "time": "2019-01-27T07:58:46+00:00",
         "bin": [
             "crunz"
         ],
@@ -222,13 +216,31 @@
                 "dev-1.11.x": "1.11.x-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "Crunz\\": "src/"
             }
         },
-        "notification-url": "https://packagist.org/downloads/",
+        "autoload-dev": {
+            "psr-4": {
+                "Crunz\\Tests\\": "tests/"
+            }
+        },
+        "scripts": {
+            "crunz:cs-fix": [
+                "@php vendor/bin/php-cs-fixer fix --diff -v --ansi"
+            ],
+            "crunz:analyze": [
+                "@php vendor/bin/php-cs-fixer fix --diff --dry-run -v"
+            ],
+            "crunz:link-changelog": [
+                "@php vendor/bin/changelog-linker dump-merges --dry-run --in-categories"
+            ],
+            "crunz:link-changelog:since": [
+                "@php vendor/bin/changelog-linker dump-merges --dry-run --in-categories --since-id"
+            ]
+        },
         "license": [
             "MIT"
         ],
@@ -249,7 +261,11 @@
             "cron",
             "cron jobs",
             "scheduler"
-        ]
+        ],
+        "support": {
+            "email": "mrl.8081@gmail.com",
+            "issues": "http://github.com/lavary/crunz/issues"
+        }
     },
     {
         "name": "monolog/monolog",
